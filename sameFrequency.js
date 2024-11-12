@@ -1,15 +1,18 @@
-function validAnagram(str1, str2) {
-    // add whatever parameters you deem necessary - good luck!
-    var result = {};
+
+function sameFrequnecy(num1, num2) {
+    const str1 = num1.toString();
+    const str2 = num2.toString();
     if (str1.length !== str2.length) {
         return false;
     }
+    var result = {};
     for (var i = 0; i < str1.length; i++) {
         var char = str1[i];
         result[char] = (result[char] || 0) + 1;
     }
-    for (var j = 0; j < str2.length; j++) {
-        var char = str2[j];
+
+    for (var i = 0; i < str2.length; i++) {
+        var char = str2[i];
         if (!result[char]) {
             return false;
         }
@@ -17,5 +20,4 @@ function validAnagram(str1, str2) {
     }
     return true;
 }
-
-console.log(validAnagram('hello', 'hello world'));
+console.log(sameFrequnecy(22, 222));
